@@ -1,8 +1,18 @@
-- back end before front end.
+- back end --> front end.
 -survey about what caractere people like the most, and the we will a graph.
 
-1/ get the star wars caractere from SWAPI.api
+1/ get the star wars caractere from SWAPI.api (20 firsts caras)
 2/ we want to store in database
 3/ we want to make restfull and CRUD operation
 4/ add cool pictures?? starwars music
 
+
+routes, users, products, db.js, .env
+//
+make a table for question
+create an admin page to update and add quetions
+questions and answers on db
+admin can add/update
+user will answer and store to db
+and you will show a graph of answer
+//
