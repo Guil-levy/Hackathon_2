@@ -1,0 +1,8 @@
+- back end before front end.
+-survey about what caractere people like the most, and the we will a graph.
+
+1/ get the star wars caractere from SWAPI.api
+2/ we want to store in database
+3/ we want to make restfull and CRUD operation
+4/ add cool pictures?? starwars music
+
