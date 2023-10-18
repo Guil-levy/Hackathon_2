@@ -1,5 +1,4 @@
-- back end --> front end.
--survey about what caractere people like the most, and the we will a graph.
+Star wars survey. js/ node/ k'nex/ pg
 
 1/ store 20 caracteres/images in db
 2/ make a survey generating 3 randoms caracteres, 5 questions/ fetch answers with Post method?
@@ -10,7 +9,7 @@
 routes, users, products, db.js, .env
 //
 make a table for question
-create an admin page to update and add quetions
+create an admin page to update and add questions
 questions and answers on db
 admin can add/update
 user will answer and store to db
