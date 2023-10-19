@@ -10,6 +10,7 @@ fetch("http://localhost:3000/db")
             // Create an image element
             const img = document.createElement('img');
             img.src = imageUrl;
+            img.classList.add('img')
             
             // Append the image element 
             imageGallery.appendChild(img);
