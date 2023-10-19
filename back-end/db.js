@@ -16,7 +16,7 @@ const db = knex({
 
   //URLS
 // const imageUrl1 = 'https://vignette.wikia.nocookie.net/starwars/images/4/49/Lukeportrait.jpg/revision/latest?cb=20151221055502&path-prefix=ro';
-const imageUrl2 = 'https://wallpapercave.com/wp/wp5825056.jpg';
+//const imageUrl2 = 'https://wallpapercave.com/wp/wp5825056.jpg';
 
 
 //INSERTS
@@ -42,15 +42,15 @@ const imageUrl2 = 'https://wallpapercave.com/wp/wp5825056.jpg';
 //   });
 
 //SELECT
-db.raw("select *from characters")
-db.select("*")
-.from("characters")
-.then((rows) =>{
-    console.log("rows=>",rows)
-})
-.catch((e) =>{
- console.log(e);
-});
+// db.raw("select *from characters")
+// db.select("*")
+// .from("characters")
+// .then((rows) =>{
+//     console.log("rows=>",rows)
+// })
+// .catch((e) =>{
+//  console.log(e);
+// });
 
 
 //  ////select one item
