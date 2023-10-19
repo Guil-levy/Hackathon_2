@@ -15,3 +15,4 @@ admin can add/update
 user will answer and store to db
 and you will show a graph of answer
 //
+hello my name is nagim
