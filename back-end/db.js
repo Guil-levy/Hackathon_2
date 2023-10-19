@@ -12,6 +12,7 @@ const db = knex({
       database : 'uxmohmcw',
     },
   });
+  module.exports = db;
 
   //URLS
 // const imageUrl1 = 'https://vignette.wikia.nocookie.net/starwars/images/4/49/Lukeportrait.jpg/revision/latest?cb=20151221055502&path-prefix=ro';

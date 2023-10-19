@@ -6,7 +6,14 @@ const db = require("./db");
 
 //
 app.get('/db', (req, res) => {
-  // Handle the route logic here
+  db.select("*")
+  .from("characters")
+  .then((rows) =>{
+      res.json(rows);
+  })
+  .catch((e) =>{
+   console.log(e);
+  });
 });
 // --------------------
 
