@@ -1,4 +1,4 @@
-const axios = require('axios');
+// const axios = require('axios');
 const knex = require('knex');
 
 //CONNECTION WITH PG
@@ -16,7 +16,7 @@ const db = knex({
 
   //URLS
 // const imageUrl1 = 'https://vignette.wikia.nocookie.net/starwars/images/4/49/Lukeportrait.jpg/revision/latest?cb=20151221055502&path-prefix=ro';
-const imageUrl2 = 'https://wallpapercave.com/wp/wp5825056.jpg';
+// const imageUrl2 = 'https://wallpapercave.com/wp/wp5825056.jpg';
 
 
 //INSERTS
@@ -63,17 +63,17 @@ db.select("*")
 // //     console.log("rows=>", data.rows);
 // // })
 
-// ////delete
-// // db("characters")
-// // .where({id:3})
-// // .del()
-// // .returning(["id","price","name"])
-// // .then((data) =>{
-// //     console.log(data);
-// // })
-// // .catch((err) =>{
-// //     console.log(err);
-// // });
+//delete
+// db("characters")
+// .where({id:1})
+// .del()
+// .returning(["username","image_column"])
+// .then((data) =>{
+//     console.log(data);
+// })
+// .catch((err) =>{
+//     console.log(err);
+// });
 
 
 // ///update
@@ -85,4 +85,4 @@ db.select("*")
 // // })
 // // .catch((err) =>{
 // //     console.log(err);
-// // });
+// // })
