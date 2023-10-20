@@ -3,3 +3,45 @@
     height: 350px;
 }
 
+<<<<<<< HEAD
+=======
+body{
+    background-image: url("https://i.giphy.com/media/TxVVB6PfWMjE4/200.webp");
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+}
+
+.button-link {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #0074D9;
+    color: #fff;
+    text-decoration: none;
+    border: 2px solid #0074D9;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+.button-link:hover {
+    background-color: #0056A0;
+    border: 2px solid #0056A0;
+}
+
+.character-container {
+    display: inline-block;
+    margin: 20px;
+}
+
+.character-image {
+    width: 200px;
+    height: 200px;
+}
+>>>>>>> ca5d53e63c6edb399a5da93b66b4d9404baf3a28
