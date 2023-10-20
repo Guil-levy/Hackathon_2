@@ -14,11 +14,6 @@ const db = knex({
   });
   module.exports = db;
 
-  //URLS
-// const imageUrl1 = 'https://vignette.wikia.nocookie.net/starwars/images/4/49/Lukeportrait.jpg/revision/latest?cb=20151221055502&path-prefix=ro';
-//const imageUrl2 = 'https://wallpapercave.com/wp/wp5825056.jpg';
-
-
 //INSERTS
 // axios.get(imageUrl2, { responseType: 'arraybuffer' })
 //   .then(response => {
