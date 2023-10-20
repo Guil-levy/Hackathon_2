@@ -1,4 +1,10 @@
-.img{
+ .img{
     width: 300px;
     height: 350px;
 }
+
+
+  body {
+    background-image: url("star\ war.jpg");
+    background-repeat: repeat-y;
+  }

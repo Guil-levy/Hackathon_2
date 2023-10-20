@@ -20,3 +20,10 @@ fetch("http://localhost:3000/db")
 ;
 }
 displayImages();
+
+
+
+
+function myFunction() {
+  document.getElementById("demo").innerHTML = "Hello, wellcome to our Starwars survey.";
+}
