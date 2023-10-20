@@ -20,6 +20,7 @@ function displayImages() {
 }
 displayImages();
 
+<<<<<<< HEAD
 function displayNames() {
   fetch("http://localhost:3000/db")
     .then((data) => data.json())
@@ -42,3 +43,11 @@ function displayNames() {
 }
 
 displayNames();
+=======
+
+
+
+function myFunction() {
+  document.getElementById("demo").innerHTML = "Hello, wellcome to our Starwars survey.";
+}
+>>>>>>> 5d6c6b3ae05c9dc787ff9f1a1d864542ecdb9a55

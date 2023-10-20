@@ -14,6 +14,10 @@ const db = knex({
   });
   module.exports = db;
 
+<<<<<<< HEAD
+=======
+  
+>>>>>>> 5d6c6b3ae05c9dc787ff9f1a1d864542ecdb9a55
 //INSERTS
 // axios.get(imageUrl2, { responseType: 'arraybuffer' })
 //   .then(response => {
