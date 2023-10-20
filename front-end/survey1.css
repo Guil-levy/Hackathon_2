@@ -2,7 +2,14 @@
     width: 300px;
     height: 350px;
 }
-
+.name{
+    color: yellow;
+  font-size: 18px;
+}
+h1{
+    margin-bottom: auto;
+    color: yellow;
+}
 body{
     background-image: url("https://i.giphy.com/media/TxVVB6PfWMjE4/200.webp");
     height: 100vh;
