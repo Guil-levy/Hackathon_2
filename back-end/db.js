@@ -16,11 +16,7 @@ const db = knex({
 
   //URLS
 // const imageUrl1 = 'https://vignette.wikia.nocookie.net/starwars/images/4/49/Lukeportrait.jpg/revision/latest?cb=20151221055502&path-prefix=ro';
-<<<<<<< HEAD
 //const imageUrl2 = 'https://wallpapercave.com/wp/wp5825056.jpg';
-=======
-// const imageUrl2 = 'https://wallpapercave.com/wp/wp5825056.jpg';
->>>>>>> 8cab10e870851657c3d9aa96a05f1f854881ac3a
 
 
 //INSERTS
