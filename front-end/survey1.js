@@ -1,44 +1,29 @@
-function displayImages() {
-  fetch("http://localhost:3000/db")
-    .then((data) => data.json())
+function displayRandomCharacters() {
+  fetch("http://localhost:3000/random-characters") 
+    .then((response) => response.json())
     .then((data) => {
       const imageGallery = document.getElementById("imageGallery");
+      const namesGallery = document.getElementById("namesGallery");
 
       data.forEach((character) => {
         const imageUrl = character.image_url;
+        const name = character.name;
 
-        // Create an image element
+        // Create image
         const img = document.createElement("img");
         img.src = imageUrl;
         img.classList.add("img");
 
-        // Append the image element
-        imageGallery.appendChild(img);
-      });
-    })
-    .catch((err) => console.log(err));
-}
-displayImages();
-
-function displayNames() {
-  fetch("http://localhost:3000/db")
-    .then((data) => data.json())
-    .then((data) => {
-      const namesGallery = document.getElementById("namesGallery");
-
-      data.forEach((character) => {
-        const name = character.name;
-
-        // Create a paragraph element for the name
+        // Create paragraph
         const nameElement = document.createElement("p");
         nameElement.textContent = name;
         nameElement.classList.add("name");
 
-        // Append the name element to the namesGallery div
+        imageGallery.appendChild(img);
         namesGallery.appendChild(nameElement);
       });
     })
     .catch((err) => console.log(err));
 }
 
-displayNames();
+displayRandomCharacters();

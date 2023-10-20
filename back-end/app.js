@@ -7,18 +7,31 @@ const cors = require("cors");
 app.use(express.json());
 app.use(cors());
 //
-app.get("/db", (req, res) => {
+// app.get("/db", (req, res) => {
+//   db.select("*")
+//     .from("characters")
+//     .then((rows) => {
+//       console.log(rows);
+//       res.json(rows);
+//     })
+//     .catch((e) => {
+//       console.log(e);
+//     });
+// });
+// --------------------
+app.get("/random-characters", (req, res) => {
   db.select("*")
     .from("characters")
-    .then((rows) => {
-      console.log(rows);
-      res.json(rows);
+    .orderByRaw("random()")
+    .limit(3) 
+    .then((randomCharacters) => {
+      res.json(randomCharacters);
     })
-    .catch((e) => {
-      console.log(e);
+    .catch((error) => {
+      console.error(error);
+      res.status(500).json({ error: "Internal server error" });
     });
 });
-// --------------------
 
 //PORT SERVER
 const port = process.env.PORT || 3000;
