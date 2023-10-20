@@ -9,6 +9,10 @@ function displayRandomCharacters() {
         const imageUrl = character.image_url;
         const name = character.name;
 
+        // Create a character container
+        const characterContainer = document.createElement("div");
+        characterContainer.classList.add("character-container");
+        
         // Create image
         const img = document.createElement("img");
         img.src = imageUrl;
@@ -19,8 +23,9 @@ function displayRandomCharacters() {
         nameElement.textContent = name;
         nameElement.classList.add("name");
 
-        imageGallery.appendChild(img);
-        namesGallery.appendChild(nameElement);
+        characterContainer.appendChild(img);
+        characterContainer.appendChild(nameElement);
+        imageGallery.appendChild(characterContainer);
       });
     })
     .catch((err) => console.log(err));
