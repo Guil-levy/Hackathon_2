@@ -21,10 +21,10 @@ app.get("/random-characters", (req, res) => {
     });
 });
 
-// Post user info
+// Post user info into NEW DB
 app.post("/save-character-selection", (req, res) => {
-  const selectedCharacter = req.body.selectedCharacter; // Retrieve the selected character name from the request
-  // Insert the selected character into the new database table
+  const selectedCharacter = req.body.selectedCharacter;
+  // Insert the selected character in the new database table
   db("selected_characters")
     .insert({ character_name: selectedCharacter })
     .then(() => {
