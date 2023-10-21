@@ -26,7 +26,7 @@ app.post("/save-character-selection", (req, res) => {
   const selectedCharacter = req.body.selectedCharacter;
 
   db("selected_characters")
-    .insert({ Voted_characters: selectedCharacter })
+    .insert({ voted_characters: selectedCharacter })
     .then(() => {
       res.status(200).send("Character selection saved.");
     })
@@ -36,12 +36,13 @@ app.post("/save-character-selection", (req, res) => {
     });
 });
 // --------------------------
-//AGGREGATE the results in a new endpoint
+// AGGREGATE the results in a new endpoint
 app.get("/character-vote-counts", (req, res) => {
   db("selected_characters")
-    .select("Voted_characters")
-    .count("Voted_characters as vote_count")
-    .groupBy("Voted_characters")
+    .select("voted_characters")
+    // .count('active', {as: 'a'})
+    .count('* as vote_count')
+    .groupBy("voted_characters")
     .then((voteCounts) => {
       res.json(voteCounts);
     })
@@ -50,6 +51,7 @@ app.get("/character-vote-counts", (req, res) => {
       res.status(500).json({ error: "Internal server error" });
     });
 });
+
 
 
 //PORT SERVER

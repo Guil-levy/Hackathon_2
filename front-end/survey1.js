@@ -64,8 +64,6 @@ document.getElementById("nextPageButton").addEventListener("click", (event) => {
       .then((response) => {
         console.log("Response received");
         if (response.status === 200) {
-          // Provide feedback to the user that their selection has been saved
-          alert("Character selection saved!");
           // Redirect to the next page (survey2.html)
           window.location.href = "survey2.html";
         } else {
