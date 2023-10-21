@@ -23,13 +23,8 @@ app.get("/random-characters", (req, res) => {
 
 // Post user info into NEW DB
 app.post("/save-character-selection", (req, res) => {
-  console.log(req.body, "guil");
   const selectedCharacter = req.body.selectedCharacter;
 
-  // Log the selected character to the server console
-  console.log("Received character selection:", selectedCharacter);
-
-  // Insert the selected character in the new database table
   db("selected_characters")
     .insert({ selected_characters: selectedCharacter })
     .then(() => {
@@ -40,6 +35,22 @@ app.post("/save-character-selection", (req, res) => {
       res.status(500).send("Error saving character selection.");
     });
 });
+// --------------------------
+//AGGREGATE the results in a new endpoint
+app.get("/character-vote-counts", (req, res) => {
+  db("selected_characters")
+    .select("character_id")
+    .count("character_id as vote_count")
+    .groupBy("character_id")
+    .then((voteCounts) => {
+      res.json(voteCounts);
+    })
+    .catch((error) => {
+      console.error(error);
+      res.status(500).json({ error: "Internal server error" });
+    });
+});
+
 
 //PORT SERVER
 const port = process.env.PORT || 3000;
