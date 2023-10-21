@@ -23,10 +23,15 @@ app.get("/random-characters", (req, res) => {
 
 // Post user info into NEW DB
 app.post("/save-character-selection", (req, res) => {
+  console.log(req.body, "guil");
   const selectedCharacter = req.body.selectedCharacter;
+
+  // Log the selected character to the server console
+  console.log("Received character selection:", selectedCharacter);
+
   // Insert the selected character in the new database table
   db("selected_characters")
-    .insert({ character_name: selectedCharacter })
+    .insert({ selected_characters: selectedCharacter })
     .then(() => {
       res.status(200).send("Character selection saved.");
     })

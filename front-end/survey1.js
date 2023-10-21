@@ -2,13 +2,13 @@ function displayRandomCharacters() {
   fetch("http://localhost:3000/random-characters")
     .then((response) => response.json())
     .then((data) => {
-      const characterContainer = document.getElementById("character-container");
+      const characterGallery = document.getElementById("characterGallery");
 
       data.forEach((character) => {
         const imageUrl = character.image_url;
         const name = character.name;
 
-        // Create character container
+        // Create a character container
         const characterContainer = document.createElement("div");
         characterContainer.classList.add("character-container");
 
@@ -22,20 +22,20 @@ function displayRandomCharacters() {
         nameElement.textContent = name;
         nameElement.classList.add("name");
 
-        // Create a checkbox for voting
-        const checkbox = document.createElement("input");
-        checkbox.type = "radio"; // Use radio buttons for selecting one option
-        checkbox.name = "character-vote"; // Give the same name to group the radio buttons
-        checkbox.classList.add("character-checkbox");
-        checkbox.value = character.id;
+        // Create a radio button for voting
+        const radio = document.createElement("input");
+        radio.type = "radio";
+        radio.name = "character-vote";
+        radio.classList.add("character-radio");
+        radio.value = character.id;
 
-        // Append the image, name, and checkbox elements to the character container
+        // Appends
         characterContainer.appendChild(img);
         characterContainer.appendChild(nameElement);
-        characterContainer.appendChild(checkbox);
 
-        // Append the character container to the main container
-        imageGallery.appendChild(characterContainer);
+        characterGallery.appendChild(characterContainer);
+
+        characterContainer.appendChild(radio);
       });
     })
     .catch((err) => console.log(err));
@@ -45,9 +45,15 @@ displayRandomCharacters();
 
 // ------------------
 //ADD even listener/ POST method
-document.getElementById("nextPageButton").addEventListener("click", () => {
-  const selectedCharacter = document.querySelector('input[name="character-vote"]:checked').value
+
+document.getElementById("nextPageButton").addEventListener("click", (event) => {
+  event.preventDefault();
+  console.log("Button clicked");
+  const selectedCharacter = document.querySelector(
+    'input[name="character-vote"]:checked'
+  ).value;
   if (selectedCharacter) {
+    console.log("Selected character:", selectedCharacter);
     fetch("http://localhost:3000/save-character-selection", {
       method: "POST",
       headers: {
@@ -56,6 +62,7 @@ document.getElementById("nextPageButton").addEventListener("click", () => {
       body: JSON.stringify({ selectedCharacter }),
     })
       .then((response) => {
+        console.log("Response received");
         if (response.status === 200) {
           // Provide feedback to the user that their selection has been saved
           alert("Character selection saved!");
@@ -72,4 +79,3 @@ document.getElementById("nextPageButton").addEventListener("click", () => {
     alert("Please select a character before proceeding.");
   }
 });
-

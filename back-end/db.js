@@ -19,8 +19,9 @@ const db = knex({
 //   .then(response => {
 //     // Convert binary image data to hexadecimal
 //     const binaryImageData2 = Buffer.from(response.data).toString('hex');
+
 //     // Insert the image data into the database
-//     db("characters")
+//     db("selected_characters")
 //       .insert({
 //         username: "Darth Vader",
 //         image_column: binaryImageData2
