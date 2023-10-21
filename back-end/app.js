@@ -6,19 +6,7 @@ const db = require("./db");
 const cors = require("cors");
 app.use(express.json());
 app.use(cors());
-//
-// app.get("/db", (req, res) => {
-//   db.select("*")
-//     .from("characters")
-//     .then((rows) => {
-//       console.log(rows);
-//       res.json(rows);
-//     })
-//     .catch((e) => {
-//       console.log(e);
-//     });
-// });
-// --------------------
+ 
 app.get("/random-characters", (req, res) => {
   db.select("*")
     .from("characters")
@@ -30,6 +18,21 @@ app.get("/random-characters", (req, res) => {
     .catch((error) => {
       console.error(error);
       res.status(500).json({ error: "Internal server error" });
+    });
+});
+
+// Post user info
+app.post("/save-character-selection", (req, res) => {
+  const selectedCharacter = req.body.selectedCharacter; // Retrieve the selected character name from the request
+  // Insert the selected character into the new database table
+  db("selected_characters")
+    .insert({ character_name: selectedCharacter })
+    .then(() => {
+      res.status(200).send("Character selection saved.");
+    })
+    .catch((error) => {
+      console.error(error);
+      res.status(500).send("Error saving character selection.");
     });
 });
 
