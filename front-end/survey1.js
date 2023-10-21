@@ -46,7 +46,7 @@ displayRandomCharacters();
 // ------------------
 //ADD even listener/ POST method
 document.getElementById("nextPageButton").addEventListener("click", () => {
-  document.querySelector('input[name="character-vote"]:checked').value
+  const selectedCharacter = document.querySelector('input[name="character-vote"]:checked').value
   if (selectedCharacter) {
     fetch("http://localhost:3000/save-character-selection", {
       method: "POST",
