@@ -7,8 +7,8 @@ document.addEventListener("DOMContentLoaded", () => {
     .then((response) => response.json())
     .then((data) => {
       // create your chart
-      // const characterNames = data.map((item) => item.voted_characters);
-      const characterNames = data.map((item) => item.name);
+      const characterNames = data.map((item) => item.voted_characters);
+    //   const characterNames = data.map((item) => item.name);
       const voteCounts = data.map((item) => item.vote_count);
       const backgroundColors = voteCounts.map(() => "rgba(75, 192, 192, 0.7)"); 
       const borderColors = voteCounts.map(() => "rgba(75, 192, 192, 1)"); 
