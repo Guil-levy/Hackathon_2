@@ -9,11 +9,9 @@ document.addEventListener("DOMContentLoaded", () => {
         // Process the aggregated data and use it to create your chart
         const characterNames = data.map((item) => item.character_name);
         const voteCounts = data.map((item) => item.vote_count);
-  
         // Generate colors for each data point
         const backgroundColors = voteCounts.map((_, index) => `rgba(75, 192, 192, 0.7)`); // Use a consistent color
         const borderColors = voteCounts.map((_, index) => `rgba(75, 192, 192, 1)`); // Use a consistent border color
-  
         // Create the data array for the chart
         const characterData = {
           labels: characterNames,
@@ -27,7 +25,6 @@ document.addEventListener("DOMContentLoaded", () => {
             },
           ],
         };
-  
         // Create and display the chart
         const characterChart = new Chart(ctx, {
           type: 'bar',

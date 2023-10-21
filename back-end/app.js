@@ -26,7 +26,7 @@ app.post("/save-character-selection", (req, res) => {
   const selectedCharacter = req.body.selectedCharacter;
 
   db("selected_characters")
-    .insert({ selected_characters: selectedCharacter })
+    .insert({ Voted_characters: selectedCharacter })
     .then(() => {
       res.status(200).send("Character selection saved.");
     })
@@ -39,9 +39,9 @@ app.post("/save-character-selection", (req, res) => {
 //AGGREGATE the results in a new endpoint
 app.get("/character-vote-counts", (req, res) => {
   db("selected_characters")
-    .select("character_id")
-    .count("character_id as vote_count")
-    .groupBy("character_id")
+    .select("Voted_characters")
+    .count("Voted_characters as vote_count")
+    .groupBy("Voted_characters")
     .then((voteCounts) => {
       res.json(voteCounts);
     })
