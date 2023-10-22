@@ -39,9 +39,15 @@ app.post("/save-character-selection", (req, res) => {
 // AGGREGATE the results in a new endpoint
 // app.get("/character-vote-counts", (req, res) => {
 //   db("selected_characters")
-// .select("voted_characters")
-//     .count('* as vote_count')
+//     .select("voted_characters")
+//     .count("* as vote_count")
+//     // .leftJoin(
+//     //   "selected_characters",
+//     //   "characters.name",
+//     //   "selected_characters.voted_characters"
+//     // )
 //     .groupBy("voted_characters")
+//     // .groupBy("characters.name")
 //     .then((voteCounts) => {
 //       res.json(voteCounts);
 //     })
