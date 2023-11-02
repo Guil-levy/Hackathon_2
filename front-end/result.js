@@ -1,17 +1,19 @@
 document.addEventListener("DOMContentLoaded", () => {
- 
   const ctx = document.getElementById("characterChart").getContext("2d");
-
 
   fetch("http://localhost:3000/character-vote-counts")
     .then((response) => response.json())
     .then((data) => {
-      
       //  const characterNames = data.map((item) => item.voted_characters);
+      console.log(data.rows);
+
       const characterNames = data.map((item) => item.character_name);
+      console.log(`characterNames: ${characterNames}`);
       const voteCounts = data.map((item) => item.vote_count);
-        const backgroundColors = voteCounts.map(() => "rgba(75, 192, 192, 0.7)");
-        const borderColors = voteCounts.map(() => "rgba(75, 192, 192, 1)");
+      console.log(`voteCounts: ${voteCounts}`);
+
+      const backgroundColors = voteCounts.map(() => "rgba(75, 192, 192, 0.7)");
+      const borderColors = voteCounts.map(() => "rgba(75, 192, 192, 1)");
 
       // data array for the chart
       const characterData = {
@@ -26,6 +28,8 @@ document.addEventListener("DOMContentLoaded", () => {
           },
         ],
       };
+      console.log(characterData);
+
       // Create and display the chart
       const characterChart = new Chart(ctx, {
         type: "bar",
